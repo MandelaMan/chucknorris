@@ -8,7 +8,7 @@ const Jokes = ({ category }) => {
 
   useEffect(() => {
     axios
-      .get(`https://api.chucknorris.io/jokes/random/category=${category}`)
+      .get(`https://api.chucknorris.io/jokes/random?category=${category}`)
       .then((res) => {
         console.log(res.data);
         setstate({
@@ -19,7 +19,7 @@ const Jokes = ({ category }) => {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [category]);
 
   const { joke } = state;
 
